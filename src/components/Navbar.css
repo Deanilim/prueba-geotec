@@ -1,0 +1,106 @@
+/* Estilo general para la barra de navegación */
+.navbar {
+  background-color: #f5f5dc;  
+  padding: 10px 20px;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.navbar-item {
+  margin: 0 5px; 
+}
+
+.navbar a {
+  color: #333;  
+  text-decoration: none;
+  font-size: 14px;  
+  font-weight: bold;
+  display: block;  /* Hace que el área del enlace sea más grande */
+  border-radius: 5px;  
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffd700;  
+}
+
+/* Eliminar el borde rojo al hacer clic */
+.navbar a:focus, 
+.navbar a:active {
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.navbar-toggle {
+  display: none;  
+  background-color: #ffd700;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.navbar-toggle span {
+  width: 30px;
+  height: 4px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.navbar-list.mobile-active {
+  display: block;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #f5f5dc;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-list {
+    display: none;  
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    display: block; 
+  }
+
+  .navbar-item {
+    margin: 5px 0;  
+  }
+
+  .navbar-list.mobile-active {
+    display: block;
+  }
+
+  .navbar a:focus, 
+.navbar a:active {
+  background-color: transparent !important; /* Asegura que no cambie el fondo */
+  color: inherit !important; /* Mantiene el mismo color del texto */
+  box-shadow: none !important; /* Evita sombras raras */
+  outline: none !important; /* Evita cualquier borde al hacer clic */
+}
+}

@@ -1,0 +1,178 @@
+/* Diseño general */
+body {
+  font-family: 'Pangolin', cursive; /* Fuente tierna y amigable */
+  background-color: #f5e1d3; /* Café más claro, tono suave */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333; /* Color del texto */
+}
+
+/* Asegurando el espacio debajo de la barra de navegación */
+body {
+  margin-top: 60px;  /* Ajustar a la altura de tu barra de navegación */
+}
+
+
+/* Diseño del contenido */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Botones */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Pangolin', cursive;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button.bg-blue {
+  background-color: #008CBA;
+  color: white;
+}
+
+button.bg-blue:hover {
+  background-color: #005f73;
+}
+
+button.bg-green {
+  background-color: #28a745;
+  color: white;
+}
+
+button.bg-green:hover {
+  background-color: #218838;
+}
+
+button.bg-red {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.bg-red:hover {
+  background-color: #c82333;
+}
+
+/* Estilo de los botones de curiosidad (consistente en todos) */
+button.bg-blue, button.bg-green, button.bg-red {
+  background-color: #ff5a5f; /* Rojo de la barra de navegación */
+  color: white;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.bg-blue:hover, button.bg-green:hover, button.bg-red:hover {
+  background-color: #ffcccb; /* Color suave */
+}
+
+/* Lista de curiosidades */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+img {
+  border-radius: 5px;
+  max-width: 100%;
+  margin-bottom: 1rem; /* Añadir un margen debajo de la imagen para separar los botones */
+}
+
+/* Ajustar los botones debajo de cada imagen */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+button {
+  margin-top: 1rem; /* Espacio entre los botones */
+  clear: both; /* Evitar que los botones se sobrepongan a las imágenes */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal .modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.modal img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal .modal-content {
+    width: 90%;
+  }
+
+  button {
+    font-size: 14px; /* Tamaño más pequeño en dispositivos móviles */
+    padding: 10px 15px; /* Ajustar el tamaño del botón */
+  }
+}
